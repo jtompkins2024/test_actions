@@ -76,7 +76,7 @@ jobs:
 
     env:
       Solution_Name: ./BlazorApp1.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: ./BlazorApp1.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+    
 
     steps:
     - name: Checkout
@@ -96,7 +96,7 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: dotnet build $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      run: dotnet build $env:Solution_Name /t:Restore
       env:
         Configuration: ${{ matrix.configuration }}
 
